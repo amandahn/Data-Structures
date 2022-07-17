@@ -1,2 +1,2 @@
 # Data-Structures
-A repository of basic data structures that can be utilized for future projects
+A repository of basic data structures that can be utilized for future projects. Written in C++.
