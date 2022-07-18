@@ -7,8 +7,8 @@
  *
  * Class invariant: It is always a BST.
  * 
- * Author: Inspired from our textbook
- * Date of last modification: March 10, 2022
+ * Author: Inspired from our textbook for CMPT 225. Modified by Amanda Ngo
+ * Date of last modification: July 18, 2022
  * 
  */
 
@@ -102,4 +102,4 @@ public:
 	
 }; // end BST
 
-#include "BST.cpp"  // Including "BST.cpp" (instead of copying the content of BST.cpp) is another way of creating templates.
+#include "BST.cpp"  
