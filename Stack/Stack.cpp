@@ -8,17 +8,14 @@
  * Author: Amanda Ngo
  * Date: February 13, 2022
  */
- 
-#include <cstddef>  // For NULL
-#include "Stack.h"
-#include <string>
-#include <iostream>
 
 using namespace std;
 
 // Constructor
 // Description: Creates an empty Stack object
 // Postcondition:  Stack is empty; head and tail are both set to NULL
+
+template <class ElementType>
 Stack::Stack(){
     head = NULL;
     tail = NULL;
@@ -27,7 +24,8 @@ Stack::Stack(){
 // Destructor
 // Description: Destruct a Stack object, releasing heap-allocated memory
 // Postcondition: All elements of a linked list are deleted
-Stack::~Stack(){
+template <class ElementType>
+Stack<ElementType>::~Stack(){
     StackNode* curr = tail;
     while(curr != NULL){
         head = head -> next;
@@ -40,12 +38,13 @@ Stack::~Stack(){
 // Description:  Insert element x to the top of the stack.
 // Postcondition:  Element x is the new tail; previous tail is now 'next
 //                 of the new tail
-void Stack::push(int x){
+template <class ElementType>
+void Stack<ElementType>::push(ElementType x){
     StackNode* newNode = new StackNode;
     if(newNode == NULL){
         cout << "Unable to push\n";
     }
-    newNode -> data = x;
+    newNode -> data = ElementType;
     newNode -> next = tail;
     tail = newNode;
 }
@@ -55,8 +54,9 @@ void Stack::push(int x){
 // Precondition:  The stack is not empty
 // Postcondition:  Returns the data stored in 'tail', deletes the current 'tail'
 //                 and sets the former 'next' element to tail
-int Stack::pop(){
-    int popped;
+template <class ElementType>
+ElementType Stack<ElementType>::pop(){
+    ElementType popped;
     if(tail != NULL){
         popped = tail -> data;
     }
@@ -68,9 +68,10 @@ int Stack::pop(){
 
 // Description:  Return the topmost element of the stack.
 // Precondition:  The stack is not empty
-// Postcondition:  REturns the data stored in 'tail'
-int Stack::peek() const{
-    int peeked;
+// Postcondition:  Returns the data stored in 'tail'
+template <class ElementType>
+ElementType Stack<ElementType>::peek() const{
+    ElementType peeked;
     if(tail != NULL){
         peeked = tail -> data;
     }
@@ -80,6 +81,7 @@ int Stack::peek() const{
 
 // Description:  Checks if the stack is empty
 // Postcondition:  Returns TRUE if the stack is empty, FALSE otherwise
+template <class ElementType>
 bool Stack::isEmpty() const{
     bool empty = false;
     if(tail == NULL){
