@@ -7,7 +7,14 @@
  * Author: Amanda Ngo
  * Date: February 13, 2022
  */
- 
+#pragma once
+
+#include <cstddef>  // For NULL
+#include <string>
+#include <iostream>
+
+
+template <class ElementType>
 class Stack {
 
     private:
@@ -22,9 +29,9 @@ class Stack {
 
         // Description:  head = ptr to the first StackNode (NULL if empty)
         //               tail = ptr to the last StackNode (NULL if empty)
-        // Class Invariant:  Follows Assignment 2 requirements, namely that the implementation 
-        //                   is a singly-linked list, with insert/remove 
+        // Class Invariant:  Implementation  is a singly-linked list, with insert/remove 
         //                   operations at the list's tail.
+   
         StackNode * head;
         StackNode * tail;
 
@@ -46,18 +53,18 @@ class Stack {
         // Description:  Insert element x to the top of the stack.
         // Postcondition:  Element x is the new tail; previous tail is now 'next
         //                 of the new tail
-        void push(int x);
+        void push(ElementType& x);
 
         // Description:  Remove and return element at the top of the stack.
         // Precondition:  The stack is not empty
         // Postcondition:  Returns the data stored in 'tail', deletes the current 'tail'
         //                 and sets the former 'next' element to tail
-        int pop();
+        ElementType pop();
 
         // Description:  Return the topmost element of the stack.
         // Precondition:  The stack is not empty
         // Postcondition:  Returns the data stored in 'tail'
-        int peek() const;
+        ElementType  peek() const;
 
 
         // Description:  Checks if the stack is empty
@@ -65,4 +72,5 @@ class Stack {
         bool isEmpty() const;
 };
 
+#include "Stack.cpp"
 
