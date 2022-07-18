@@ -29,13 +29,6 @@ class List  {
 
       public:
 
-      /* 
-       * You can add more private methods to this class, 
-       * but you cannot remove the methods below 
-       * nor can you change their prototype.
-       * Bottom line: you cannot change the public interface of this List class.
-       * 
-       */
 
         // Default constructor
         List();
