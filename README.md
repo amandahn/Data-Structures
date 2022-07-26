@@ -3,7 +3,7 @@ A repository of basic data structures that can be utilized for future projects. 
 
 **Includes:**
 - Binary Heap
-- Binary Search Tree (BST)
+- Linked-Based Binary Search Tree (BST)
 - Array-based Circular Queue 
 - Array-based Priority Queue
 - Array-based Position Oriented List
